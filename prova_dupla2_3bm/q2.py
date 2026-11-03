@@ -1,0 +1,16 @@
+alunos_manha = set()
+alunos_tarde = set()
+n_manha = int(input("Quantidade de cessos pela manhã: "))
+for i in range(n_manha):
+    matricula = input("Matrícula: ")
+    alunos_manha.add(matricula)
+    n_tarde = int(input("Quantidade de acessos pela tarde: "))
+for i in range(n_tarde):
+    matricula = input("Matricula: ")
+    alunos_tarde.add(matricula)
+print(f"Acesso pela manhã: {alunos_manha}")
+print(f"Acesso pela tarde: {alunos_tarde}")
+print(f"Acesso nos dois turnos: {alunos_manha & alunos_tarde}")
+print(f"Acesso somente pela manhã: {alunos_manha - alunos_tarde}")
+print(f"Acesso somente pela tarde: {alunos_tarde - alunos_manha}")
+print(f"Acessos diferentes nos turnos: {alunos_manha ^ alunos_tarde}")
