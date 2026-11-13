@@ -1,0 +1,33 @@
+n = int(input("Quantidade de alunos: "))
+lista_medias = []
+situacoes = [0, 0, 0]
+
+for aluno in range(n):  #0.. n-1
+    print(f"== Aluno {aluno} ==")
+    nota1 = int(input("\tNota 1: "))
+    nota2 = int(input("\tNota 2: "))
+    media = (nota1 + nota2) / 2
+    lista_medias.append(media)
+
+    print(f"Média = {media:.0f} ", end="")
+    if media >60:
+        print("Aprovado")
+        situacoes[0] += 1
+    elif media >= 20:
+        print("Prova final")
+        situacoes[1] += 1
+    else:
+        print("Reprovado")
+        situacoes[2] += 1
+
+media_geral = sum(lista_medias) / len(lista_medias)
+percentual_aprovados = (situacoes[0] / n) * 100
+
+print(f"Maior média = {max(lista_medias):.0f}")
+print(f"Menor média = {min(lista_medias):.0f}")
+print(f"Média geral = {media_geral:.0f}")
+print(f"Aprovados: {situacoes[0]}")
+print(f"Prova final: {situacoes[1]}")
+print(f"Reprovados: {situacoes[2]}")
+print(f"Percentual de aprovados: {percentual_aprovados:.1f}")
+print(f"Médias em ordem decrescente: {sorted(lista_medias, reverse=True)}")
